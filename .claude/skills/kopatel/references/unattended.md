@@ -62,3 +62,7 @@ Before a long `full` run:
 5. Start the real `full` run only after a clean smoke.
 
 Heartbeat is described in `references/heartbeat.md`.
+
+## Recipe B: Headless Overnight Runner
+
+For a no-prompt overnight run, use `references/overnight-runner.md` and the bundled `scripts/overnight.*` runner.

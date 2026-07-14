@@ -61,5 +61,6 @@ digs/<slug>/
 - `process-wave.js`: deduplication, frontier update, source registry, and wave telemetry.
 - `consolidation.js`: idempotent digest generation.
 - `build-site.mjs`: single-file static site builder.
+- `scripts/overnight.*` and `references/overnight-runner.md`: portable headless overnight runner for long `full` digs.
 
 The public skill uses a supervised allowlist plus heartbeat for long runs. It does not include private runner infrastructure.

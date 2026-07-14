@@ -7,7 +7,7 @@ description: Use when the user explicitly asks to dig deeply or exhaustively int
 
 You are the thin orchestrator for an autonomous deep-research pipeline. Workflow agents do the heavy work; your job is to start phases, persist large results through Node scripts on disk, keep state resumable, and show the user the small decisions that matter.
 
-Read `references/hard-lessons.md` before the first real run. Use `references/pipeline.md` for file schemas and phase mechanics, `references/heartbeat.md` for crash recovery, `references/unattended.md` for the supervised allowlist recipe, and `references/adopt-existing.md` when attaching kopatel to an existing research folder.
+Read `references/hard-lessons.md` before the first real run. Use `references/pipeline.md` for file schemas and phase mechanics, `references/heartbeat.md` for crash recovery, `references/unattended.md` for unattended recipes, `references/overnight-runner.md` for the headless overnight runner, and `references/adopt-existing.md` when attaching kopatel to an existing research folder.
 
 ## Model Split
 
@@ -43,7 +43,7 @@ Ask only one question at a time:
 
 Do not ask for a path by default. Show: `I will save this in ./digs/<slug>/; tell me a different base if needed.`
 
-For `full`, use Recipe A from `references/unattended.md`: a supervised allowlist plus heartbeat. Do not rely on a separate external overnight runner in the public skill.
+For `full`, use Recipe A from `references/unattended.md`: a supervised allowlist plus heartbeat. For a fully headless overnight run, use Recipe B from `references/overnight-runner.md` and the bundled `scripts/overnight.*` runner.
 
 ### 1. Scout
 
