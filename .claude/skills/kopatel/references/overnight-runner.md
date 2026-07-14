@@ -20,6 +20,8 @@ You can replace it with another CLI agent by passing the runner's `AgentCmd` opt
 
 Create a static `GOAL.md` and run one agent pass per iteration. The agent reads the same goal every time, checks current files, performs one bounded step, and appends progress to `STATUS.md`.
 
+Run the runner with the work directory set to the dig folder (`<DIG>`): `STATUS.md`, `.done` and `.blocked` live there, and the GOAL template below assumes it.
+
 The mutable files are:
 
 - `STATUS.md`: append-only status and iteration notes.
@@ -67,6 +69,7 @@ Example armed allow list for a kopatel dig:
   "permissions": {
     "allow": [
       "Agent",
+      "Workflow",
       "WebSearch",
       "WebFetch",
       "ToolSearch",
@@ -124,7 +127,7 @@ You are running one unattended kopatel wave per iteration.
 
 ## Procedure For This Iteration
 
-1. Read `<DIG>/_meta/dig.json`, `<DIG>/STATUS.md` if present, and the latest `<DIG>/_meta/frontier-wN.json`.
+1. Read `<DIG>/_meta/dig.json`, `STATUS.md` if present, and the latest `<DIG>/_meta/frontier-wN.json`.
 2. If the latest frontier is empty, append `DONE: <slug>` to `STATUS.md`, create `.done` in the runner work directory, and stop.
 3. Run one wave workflow from `<DIG>/_meta/wave.js`.
 4. Persist the wave result under `<DIG>/_meta/wave-<N>-out.json`.
